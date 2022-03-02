@@ -24,7 +24,7 @@ def subtractive_css_filter(css_filter, html_content):
         item.decompose()
     return str(soup)
 
-def filter_tags(html_content, elements=["header", "footer", "nav"]):
+def ignore_tags(html_content, elements=["header", "footer", "nav"]):
     soup = BeautifulSoup(html_content, "html.parser")
     for item in soup.find_all(elements):
         item.decompose()

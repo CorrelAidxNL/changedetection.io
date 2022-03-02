@@ -87,6 +87,7 @@ class ChangeDetectionStore:
             'notification_format': default_notification_format,
             'css_filter': "",
             'subtractive_css_filter': False,
+            'filter_body': False,
             'trigger_text': [],  # List of text or regex to wait for until a change is detected
             'fetch_backend': None,
             'extract_title_as_title': False

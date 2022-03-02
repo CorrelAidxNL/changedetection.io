@@ -120,6 +120,11 @@ User-Agent: wonderbra 1.0") }}
                     Use this if you get constant changes on items you're not interested in, ie. for news or stock trackers.
                 </span>
                     </div>
+                    <div class="pure-control-group">
+                      {{ render_field(form.filter_body) }}
+                      <br/>
+                      Removes header, footer and nav tags from HTML before saving. Enable this option to focus only on the body of the page you are watching.
+                    </div>
 
                 </fieldset>
                 <fieldset class="pure-group">

@@ -108,7 +108,7 @@ class perform_site_check():
                             else:
                                 html_content = html_tools.css_filter(css_filter=css_filter_rule, html_content=fetcher.content)
                     if filter_body:
-                        html_content = html_tools.filter_tags(html_content)
+                        html_content = html_tools.ignore_tags(html_content)
                     # get_text() via inscriptis
                     stripped_text_from_html = get_text(html_content)
 
