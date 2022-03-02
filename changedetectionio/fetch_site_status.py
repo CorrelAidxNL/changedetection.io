@@ -109,6 +109,7 @@ class perform_site_check():
             is_html = not is_json
             css_filter_rule = watch['css_filter']
             subtractive_css_filter = watch['subtractive_css_filter']
+            filter_body = watch['filter_body']
 
             has_filter_rule = css_filter_rule and len(css_filter_rule.strip())
             if is_json and not has_filter_rule:
@@ -135,13 +136,15 @@ class perform_site_check():
                                 html_content = html_tools.subtractive_css_filter(css_filter=css_filter_rule, html_content=fetcher.content)
                             else:
                                 html_content = html_tools.css_filter(css_filter=css_filter_rule, html_content=fetcher.content)
-
+                    if filter_body:
+                        html_content = html_tools.filter_tags(html_content)
                     # get_text() via inscriptis
                     stripped_text_from_html = get_text(html_content)
                 else:
                     # Don't run get_text or xpath/css filters on plaintext
                     stripped_text_from_html = html_content
 
+            
             # Re #340 - return the content before the 'ignore text' was applied
             text_content_before_ignored_filter = stripped_text_from_html.encode('utf-8')
 

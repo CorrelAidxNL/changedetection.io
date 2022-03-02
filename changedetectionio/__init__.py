@@ -512,9 +512,9 @@ def changedetection_app(config=None, datastore_o=None):
                 if len(datastore.data['watching'][uuid]['history']):
                     update_obj['previous_md5'] = get_current_checksum_include_ignore_text(uuid=uuid)
 
-
             datastore.data['watching'][uuid]['css_filter'] = form.css_filter.data.strip()
             datastore.data['watching'][uuid]['subtractive_css_filter'] = form.subtractive_css_filter.data
+            datastore.data['watching'][uuid]['filter_body'] = form.filter_body.data
 
             # Reset the previous_md5 so we process a new snapshot including stripping ignore text.
             if form.css_filter.data.strip() != datastore.data['watching'][uuid]['css_filter']:

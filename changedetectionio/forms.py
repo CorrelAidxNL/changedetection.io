@@ -304,6 +304,7 @@ class watchForm(commonSettingsForm):
                                                [validators.Optional(), validators.NumberRange(min=1)])
     css_filter = StringField('CSS/JSON/XPATH Filter', [ValidateCSSJSONXPATHInput()])
     subtractive_css_filter = BooleanField('CSS filter removes selected elements instead of selecting them', default=False)
+    filter_body = BooleanField('Remove header/footer/nav tags from HTML', default=False)
     title = StringField('Title')
 
     ignore_text = StringListField('Ignore Text', [ValidateListRegex()])
